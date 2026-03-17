@@ -58,6 +58,7 @@ TELEGRAM_TOKEN=텔레그램 봇 토큰
 CHAT_ID=텔레그램 채팅 아이디  
 STD_NO=학교아이디  
 PWD=학교비밀번호  
+TARGET_SUBJECT=모니터링 할 과목코드
 
 ## 4. 과목 코드 설정
 `target_subjects`에 원하는 과목 코드를 입력
