@@ -22,16 +22,17 @@
 아래 명령어를 순서대로 따라하면 즉시 실행 가능합니다.
 
 
-# 1. 레포지토리 복제 및 이동
+## 1. 레포지토리 복제 및 이동
 ```
 git clone [https://github.com/deokk/KU_Yeosoek.git](https://github.com/deokk/KU_Yeosoek.git)
 cd KU_Yeosoek 
 ```
 
-# 2. 필수 라이브러리 설치
+## 2. 필수 라이브러리 설치
 ```
 pip install -r requirements.txt
 ```
+
 ## 텔레그램 봇 생성 및 설정 방법
 
 알림을 받기 위해 텔레그램 봇을 생성하고 정보를 획득하는 과정입니다.
@@ -39,26 +40,30 @@ pip install -r requirements.txt
 ### 1. 봇 생성 및 토큰(Token) 획득
 1. 텔레그램에서 [@BotFather](https://t.me/botfather)를 검색하여 대화를 시작합니다.
 2. `/newbot` 명령어를 입력합니다.
-3. 봇의 이름(Name)과 사용자 이름(Username, 'bot'으로 끝나야 함)을 설정합니다.
+3. 봇의 이름(Name)과 사용자 이름(Username, 'bot'으로 끝나야 함)을 설정합니다(이름은 사용자가 원하는대로 설정해도 문제없음).
 4. 생성이 완료되면 `HTTP API token` (예: `123456:ABC-DEF...`)을 복사하여 `.env`의 `TELEGRAM_TOKEN`에 입력합니다.
 
 ### 2. 채팅방 ID(Chat ID) 확인
-1. 텔레그램에서 방금 만든 봇을 검색하여 **[시작(Start)]** 버튼을 누릅니다.
-2. 브라우저에서 아래 주소로 접속합니다 (본인의 토큰 입력).
-   - `https://api.telegram.org/bot<본인의_토큰>/getUpdates`
-3. 브라우저에 뜨는 JSON 내용 중 `"chat":{"id":123456789...}` 부분의 숫자를 복사하여 `.env`의 `CHAT_ID`에 입력합니다.
-   - *팁: 봇에게 아무 메시지나 보낸 후 새로고침해야 데이터가 뜹니다!*
+1. 텔레그램 검색창에 [@userinfobot](https://t.me/userinfobot) 또는 [@myidbot](https://t.me/myidbot)을 검색합니다.
+2. 해당 봇에게 **[시작(Start)]** 버튼을 누르거나 메시지를 보냅니다.
+3. 봇이 즉시 당신의 **`Id: 123456789`**를 답장해 줍니다(보통 맨 윗 줄에 있음).
+4. 이 숫자를 복사하여 `.env` 파일의 `CHAT_ID` 항목에 붙여넣으세요.
 
-### 3. 환경 변수(.env) 설정 (직접 파일을 만들어 아래 내용을 입력하세요)
-LEGRAM_TOKEN=텔레그램 봇 토큰
-AT_ID=텔레그램 채팅 아이디
+### 3. 봇 활성화 (매우 중요!)
+1. 텔레그램에서 본인이 생성한 봇(`@본인의_봇_아이디`)을 검색하여 대화방에 들어갑니다.
+2. 하단의 **[시작(Start)]** 버튼을 반드시 눌러야 합니다. 
+   - *참고: 이 과정을 생략하면 프로그램에서 알림을 보낼 때 `Unauthorized` 에러가 발생하며 알림이 오지 않습니다.*
+
+## 3. 환경 변수(.env) 설정 (직접 파일을 만들어 아래 내용을 입력하세요)
+TELEGRAM_TOKEN=텔레그램 봇 토큰
+CHAT_ID=텔레그램 채팅 아이디
 STD_NO=학교아이디
 PWD=학교비밀번호
 
-### 4. 과목 코드 설정
+## 4. 과목 코드 설정
 `target_subjects`에 원하는 과목 코드를 입력
 
-### 5. 실행
+## 5. 실행
 ```
 python sugang.py
 ```
