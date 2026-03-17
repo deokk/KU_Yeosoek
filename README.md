@@ -34,7 +34,6 @@ pip install -r requirements.txt
 ```
 
 ## 텔레그램 봇 생성 및 설정 방법
-
 알림을 받기 위해 텔레그램 봇을 생성하고 정보를 획득하는 과정입니다.
 
 ### 1. 봇 생성 및 토큰(Token) 획득
@@ -55,10 +54,10 @@ pip install -r requirements.txt
    - *참고: 이 과정을 생략하면 프로그램에서 알림을 보낼 때 `Unauthorized` 에러가 발생하며 알림이 오지 않습니다.*
 
 ## 3. 환경 변수(.env) 설정 (직접 파일을 만들어 아래 내용을 입력하세요)
-TELEGRAM_TOKEN=텔레그램 봇 토큰
-CHAT_ID=텔레그램 채팅 아이디
-STD_NO=학교아이디
-PWD=학교비밀번호
+TELEGRAM_TOKEN=텔레그램 봇 토큰  
+CHAT_ID=텔레그램 채팅 아이디  
+STD_NO=학교아이디  
+PWD=학교비밀번호  
 
 ## 4. 과목 코드 설정
 `target_subjects`에 원하는 과목 코드를 입력
