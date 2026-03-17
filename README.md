@@ -5,31 +5,34 @@
 
 ---
 
-## ✨ 핵심 기능 (Key Features)
+## 핵심 기능 (Key Features)
 
 - **재학생(SID) 자동 로그인**: 세션(Session) 유지 기술을 통해 별도의 로그인 조작 없이 24시간 감시가 가능합니다.
 - **실시간 여석 조회**: 5분(설정 가능) 주기로 서버를 체크하여 과목별 정원 및 현재 인원 데이터를 수집합니다.
 - **즉각적인 텔레그램 알림**: 빈자리가 1개라도 발생하면 사용자의 스마트폰으로 푸시 알림을 즉시 전송합니다.
 - **보안 최적화**: `.env` 파일을 통해 학번, 비밀번호 등 민감 정보를 코드와 분리하여 관리합니다.
 
-## 🛠️ 기술 스택 (Tech Stack)
+##  기술 스택 (Tech Stack)
 
 - **Language**: Python 3.x
 - **Libraries**: `requests`, `python-dotenv`, `Telegram Bot API`
 
-## ⚙️ 설치 및 실행 (Quick Start)
+##  설치 및 실행 (Quick Start)
 
 아래 명령어를 순서대로 따라하면 즉시 실행 가능합니다.
 
-```bash
+
 # 1. 레포지토리 복제 및 이동
+```
 git clone [https://github.com/deokk/KU_Yeosoek.git](https://github.com/deokk/KU_Yeosoek.git)
-cd KU_Yeosoek
+cd KU_Yeosoek 
+```
 
 # 2. 필수 라이브러리 설치
+```
 pip install -r requirements.txt
-
-## 🤖 텔레그램 봇 생성 및 설정 방법
+```
+## 텔레그램 봇 생성 및 설정 방법
 
 알림을 받기 위해 텔레그램 봇을 생성하고 정보를 획득하는 과정입니다.
 
@@ -53,4 +56,6 @@ pip install -r requirements.txt
 #PWD=학교비밀번호
 
 # 4. 실행
+```
 python sugang.py
+```
