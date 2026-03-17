@@ -10,6 +10,8 @@ TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
 CHAT_ID = os.getenv("CHAT_ID")
 STD_NO = os.getenv("STD_NO")
 PWD = os.getenv("PWD")
+subjects_str = os.getenv("TARGET_SUBJECTS", "")
+target_subjects = subjects_str.split(",")
 
 # 2. 전역 세션(Session) 객체 생성 (자동으로 쿠키 관리)
 session = requests.Session()
@@ -96,7 +98,7 @@ def check_seats(subject_id):
         print(f"  - [{subject_name}] 정원: {capacity} / 현재: {enrolled}")
         
         if available_seats > 0:
-            msg = f"[{subject_name}] 빈자리 {available_seats}개 발생! 이건 내꺼다..!"
+            msg = f"[{subject_name}] 빈자리 {available_seats}개 발생! \n 이건 내꺼다..!"
             print(msg)
             send_telegram_message(msg)
             
@@ -110,7 +112,6 @@ def check_seats(subject_id):
 # ---------------------------------------------------------
 # 실행 설정 및 메인 루프
 # ---------------------------------------------------------
-target_subjects = ["과목 코드", "여러개도 가능"]
 check_interval = 300  # 여석 확인 주기 (5분)
 
 print("건국대학교 수강신청 빈자리 탐지기를 시작합니다! (종료하려면 Ctrl+C)")
